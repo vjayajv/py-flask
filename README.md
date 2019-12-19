@@ -6,7 +6,8 @@ A simple web-app to call a local shell-script and print the output.
 
 ## hello.py
 ------------
-```from flask import flash
+```
+from flask import flash
 import re
 import subprocess
 from flask import Flask, render_template, request, redirect, url_for
