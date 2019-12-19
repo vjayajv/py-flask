@@ -86,6 +86,42 @@ echo "The argument you passed for your script was: $1"
 ```
 this is a silly script though :P
 
+### you should be able to see something like this after you hit localhost:5000 in your browser
+
+<html>
+<head>
+  <title>sample flask app</title>
+</head>
+<body>
+
+<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+<h2>Script Runner</h2>
+  <form action="" method="post">
+    Enter arguments for your script:<br>
+<div class="form-group">
+	<input type="text" name="text_input" value="">
+</div>
+<br>
+<button type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <br>
+  <form action="/reset" method="post">
+	  <button type="submit" class="btn btn-success">Reset</button>
+  </form>
+  <br>
+  <div class="row"> 
+<div class="alert alert-info"> 
+	  {{ resp }} 
+
+  </div>
+  </div>
+  </div>
+		
+</body>
+</html>
 
 
 
