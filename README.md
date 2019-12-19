@@ -66,16 +66,13 @@ if __name__ == '__main__':
   </form>
   <br>
   <div class="row"> 
-					  <div class="alert alert-info"> 
+<div class="alert alert-info"> 
+	  {{ resp }} 
 
-						  {{ resp }} 
-
-					  </div>
-
-					  </div>
-
-			  </div>
-			
+  </div>
+  </div>
+  </div>
+		
 </body>
 </html>
 ```
