@@ -150,7 +150,6 @@ this is a silly script though :P
 					  </div>
 
 			  </div>
-</body>
 </html>
 
 
