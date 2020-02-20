@@ -39,21 +39,37 @@ if __name__ == '__main__':
 ## index.html
 --------------
 ```
-
 <!doctype html>
 <html>
 <head>
-  <title>sample flask app</title>
+  <title>Clear Cache</title>
+	<script>
+  window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove();
+    });
+}, 2000);
+	</script>
 </head>
 <body>
 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
 <link rel="stylesheet" href="static/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="container">
-<h2>Script Runner</h2>
-  <form action="" method="post">
-    Enter arguments for your script:<br>
+<div class="container" >
+	<br>
+	<br>
+	<h2>script runner</h2>
+	<br>
+	<form align="left" action="" method="post">
+    Enter args for your script:<br>
 <div class="form-group">
 	<input type="text" name="text_input" value="">
 </div>
@@ -61,19 +77,16 @@ if __name__ == '__main__':
 <button type="submit" class="btn btn-success">Submit</button>
   </form>
   <br>
-  <form action="/reset" method="post">
-	  <button type="submit" class="btn btn-success">Reset</button>
-  </form>
-  <br>
-  <div class="row"> 
-<div class="alert alert-info"> 
-	  {{ resp }} 
+    <div class="row"> 
+					      <!-- Success Alert -->
+    <div class="alert alert-success alert-dismissible fade show">
+	    <strong>{{ resp }}</strong> 
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div>
 
-  </div>
-  </div>
-  </div>
-		
-</body>
+					  </div>
+
+			  </div>
 </html>
 ```
 
