@@ -6,7 +6,7 @@ from wtforms import Form, TextField, TextAreaField, validators, StringField, Sub
 
 # App config.
 DEBUG = True
-app = Flask(__name__,template_folder='/app/py-flask/templates')
+app = Flask(__name__,template_folder='/app/templates')
 app.config.from_object(__name__)
 app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
 @app.route('/', methods=['GET', 'POST'])
