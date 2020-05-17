@@ -4,6 +4,36 @@ Using python and flask to run a shell script from a web app ui
 
 A simple web-app to call a local shell-script and print the output.
 
+## Run using docker
+--------------------
+Enter py-flask folder and run the following docker commands.
+```
+docker build -t myflaskapp . 
+
+docker run -itd --name myapp -p 5000:5000 myflaskapp
+```
+Now, you can view the application using this URL in the browser
+
+http://localhost:5000
+
+Instead, if you want to run locally, follow below steps.
+
+### change path in hello.py
+--------------------------
+app = Flask(__ name __ ,template_folder= __'/PATH/TO/__ py-flask/templates')
+
+### Command to run app
+---------------------
+export FLASK_APP=hello.py
+flask run
+
+### Run in background (daemon)
+-----------------------------
+sudo apt install gunicorn
+
+gunicorn -b 127.0.0.1:5000 hello:app -D
+
+
 ## hello.py
 ------------
 ```
@@ -98,18 +128,3 @@ if __name__ == '__main__':
 echo "The argument you passed for your script was: $1"
 ```
 this is a silly script though :P
-
-### change path in hello.py
---------------------------
-app = Flask(__ name __ ,template_folder= __'/PATH/TO/__ py-flask/templates')
-
-### Command to run app
----------------------
-export FLASK_APP=hello.py
-flask run
-
-### Run in background (daemon)
------------------------------
-sudo apt install gunicorn
-
-gunicorn -b 127.0.0.1:5000 hello:app -D
