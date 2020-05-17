@@ -1,14 +1,9 @@
-FROM python:rc-alpine3.10
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
+FROM python:3.7-slim-buster
 
 WORKDIR /app
 
-RUN pip install -r requirements.txt
-
-RUN pip install Flask-WTF
+RUN pip install flask && pip install wtforms
 
 COPY . /app
 
-ENTRYPOINT flask run --host 0.0.0.0
-
+ENTRYPOINT export FLASK_APP=hello.py && flask run --host 0.0.0.0
